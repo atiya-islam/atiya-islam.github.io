@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sheikh Atiya Islam — Ph.D. Candidate in Economics at The Pennsylvania State University. Industrial Organization and Health Economics.">
+  <title>Sheikh Atiya Islam | Economics</title>
+  <style>
+    :root{
+      --text:#20242a;
+      --muted:#66707a;
+      --accent:#1f5fae;
+      --accent-dark:#164a88;
+      --line:#dfe4ea;
+      --soft:#f7f9fb;
+      --max:1080px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:#fff;color:var(--text)}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.52;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .shell{
+      width:min(calc(100% - 48px),var(--max));
+      margin:0 auto;
+      padding:34px 0 30px;
+    }
+
+    /* Header */
+    .identity{
+      display:grid;
+      grid-template-columns:150px 1fr;
+      gap:30px;
+      align-items:center;
+      padding-bottom:26px;
+      border-bottom:1px solid var(--line);
+    }
+    .headshot{
+      width:150px;
+      height:150px;
+      object-fit:cover;
+      border-radius:4px;
+      border:1px solid var(--line);
+      display:block;
+    }
+    h1{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:2.42rem;
+      line-height:1.05;
+      margin:0 0 7px;
+      font-weight:600;
+      letter-spacing:-.015em;
+    }
+    .subtitle{
+      margin:2px 0;
+      font-size:1rem;
+    }
+    .fields{
+      margin:9px 0 13px;
+      font-size:.98rem;
+      font-weight:700;
+    }
+    .contact-line{
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:7px;
+      margin-top:9px;
+      font-size:.88rem;
+      color:var(--accent);
+    }
+    .contact-item{
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+      color:var(--accent);
+      font-weight:500;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .contact-item:hover{
+      color:var(--accent-dark);
+      text-decoration:none;
+    }
+    .contact-icon{
+      width:13px;
+      height:13px;
+      flex:0 0 13px;
+      stroke:currentColor;
+      stroke-width:1.8;
+      fill:none;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+    .sep{
+      color:#9aa3ad;
+      font-weight:400;
+    }
+
+    /* Tabs */
+    .tabs{
+      display:flex;
+      justify-content:center;
+      gap:0;
+      border-bottom:1px solid var(--line);
+      margin-bottom:22px;
+    }
+    .tab-btn{
+      appearance:none;
+      border:0;
+      border-bottom:3px solid transparent;
+      background:#fff;
+      color:var(--muted);
+      padding:12px 18px 10px;
+      font-size:.93rem;
+      font-weight:650;
+      cursor:pointer;
+    }
+    .tab-btn:hover{color:var(--text)}
+    .tab-btn.active{
+      color:var(--accent);
+      border-bottom-color:var(--accent);
+    }
+
+    /* Panels */
+    .panel{display:none}
+    .panel.active{display:block}
+    .home-copy{
+      max-width:900px;
+      margin:0 auto;
+      font-size:1rem;
+      text-align:justify;
+      text-justify:inter-word;
+    }
+    .home-copy p{
+      margin:0 0 15px;
+    }
+    .home-copy p:last-child{margin-bottom:0}
+
+    .panel{
+      max-width:900px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .section-title{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:1.28rem;
+      margin:0 0 12px;
+      font-weight:600;
+    }
+    .paper{
+      margin:0 0 19px;
+      max-width:900px;
+    }
+    .paper-title{
+      font-size:1rem;
+      font-weight:700;
+      margin-bottom:4px;
+    }
+    .tag{
+      display:inline-block;
+      margin-left:6px;
+      padding:1px 6px;
+      border-radius:3px;
+      background:#eef4fb;
+      color:var(--accent);
+      font-size:.68rem;
+      font-weight:700;
+      vertical-align:1px;
+      white-space:nowrap;
+    }
+    .paper p, .teaching-list{
+      margin:0;
+      color:#454d56;
+      font-size:.91rem;
+      text-align:justify;
+      text-justify:inter-word;
+    }
+    .coauthor{
+      color:var(--muted);
+      font-size:.82rem;
+      margin-bottom:3px;
+    }
+
+    .cv-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+    .cv-btn{
+      display:inline-flex;
+      align-items:center;
+      padding:8px 12px;
+      border:1px solid var(--accent);
+      border-radius:4px;
+      color:var(--accent);
+      font-weight:650;
+      font-size:.88rem;
+      text-decoration:none;
+    }
+    .cv-btn.primary{
+      background:var(--accent);
+      color:#fff;
+    }
+    .cv-btn:hover{text-decoration:none}
+    .cv-note{
+      color:var(--muted);
+      font-size:.88rem;
+      margin:0 0 12px;
+    }
+    .cv-frame{
+      width:100%;
+      height:560px;
+      border:1px solid var(--line);
+      border-radius:4px;
+      background:var(--soft);
+    }
+
+    @media (max-width:700px){
+      .shell{width:min(calc(100% - 28px),680px);padding-top:24px}
+      .identity{
+        grid-template-columns:110px 1fr;
+        gap:18px;
+      }
+      .headshot{width:110px;height:110px}
+      h1{font-size:1.9rem}
+      .subtitle{font-size:.91rem}
+      .fields{font-size:.9rem}
+      .contact-line{font-size:.82rem;gap:5px}
+      .tabs{overflow-x:auto}
+      .tab-btn{padding:11px 13px 9px;white-space:nowrap}
+      .cv-frame{height:500px}
+    }
+
+    @media (max-width:480px){
+      .identity{grid-template-columns:1fr}
+      .headshot{width:120px;height:120px}
+      h1{font-size:1.85rem}
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+
+    <header class="identity">
+      <img class="headshot" src="headshot.png" alt="Sheikh Atiya Islam">
+      <div>
+        <h1>Sheikh Atiya Islam</h1>
+        <p class="subtitle">Ph.D. Candidate in Economics</p>
+        <p class="subtitle">The Pennsylvania State University</p>
+        <p class="fields">Industrial Organization · Health Economics</p>
+        <div class="contact-line">
+          <a class="contact-item" href="mailto:smi5203@psu.edu" aria-label="Email">
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+              <path d="M3 7l9 6 9-6"></path>
+            </svg>
+            <span>smi5203@psu.edu</span>
+          </a>
+          <span class="sep">|</span>
+          <a class="contact-item" href="tel:+18146992021" aria-label="Phone">
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 4h3l2 5-2 1.5a16 16 0 0 0 5.5 5.5L15 14l5 2v3c0 1.1-.9 2-2 2C10.3 21 3 13.7 3 6c0-1.1.9-2 2-2z"></path>
+            </svg>
+            <span>+1 (814) 699 2021</span>
+          </a>
+          <span class="sep">|</span>
+          <a class="contact-item" href="https://www.linkedin.com/in/atiyaislam" aria-label="LinkedIn">
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8" r="3"></circle>
+              <path d="M5 20c.7-4 3-6 7-6s6.3 2 7 6"></path>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="Website sections">
+      <button class="tab-btn active" data-tab="home">Home</button>
+      <button class="tab-btn" data-tab="research">Research</button>
+      <button class="tab-btn" data-tab="teaching">Teaching</button>
+      <button class="tab-btn" data-tab="cv">CV</button>
+    </nav>
+
+    <section id="home" class="panel active">
+      <div class="home-copy">
+        <p>
+          I am a researcher in industrial organization and health economics, with additional interests in applied
+          microeconomics and environmental and energy economics. My research primarily focuses on how regulation,
+          information, and market incentives shape individual and firm behavior and the allocation of resources,
+          particularly in healthcare markets.
+        </p>
+
+        <p>
+          My job market paper, <strong>“Physicians’ Location Choice and Access to Healthcare: Case of <em>Dobbs</em> 2022,”</strong>
+          studies how local legal and regulatory environments shape where physicians practice. I link a novel state-year panel
+          of abortion restrictions to longitudinal physician practice-location data and combine reduced-form evidence with a
+          discrete-choice model that separates destination sorting from incumbent-location persistence. More permissive legal
+          environments attract more OB/GYN arrivals and make counties more attractive destinations, while incumbent physicians
+          are more persistent in restrictive environments. Counterfactual policy paths imply meaningful geographic reallocation,
+          with the resulting distribution modestly shifting physician supply toward counties with lower baseline OB/GYN availability.
+        </p>
+
+        <p>
+          My other work examines how physicians adjust prescribing when the FDA Accelerated Approval program changes
+          information about a drug’s clinical value, and how electric-generating plants adjust operation, generation,
+          and fuel use in response to carbon-pricing incentives under the Regional Greenhouse Gas Initiative.
+        </p>
+      </div>
+    </section>
+
+    <section id="research" class="panel">
+      <h2 class="section-title">Research</h2>
+
+      <article class="paper">
+        <div class="paper-title">
+          Physicians’ Location Choice and Access to Healthcare: Case of <em>Dobbs</em> 2022
+          <span class="tag">Job Market Paper</span>
+        </div>
+        <p>
+          This paper studies how local legal and regulatory environments affect physicians’ geographic practice choices. I combine
+          a novel state-year panel of abortion restrictions with longitudinal physician practice-location data. Reduced-form evidence
+          shows that a one-standard-deviation increase in legal permissiveness is associated with 0.089 more annual OB/GYN arrivals
+          per 100,000 residents relative to general surgery. A county-level discrete-choice model implies about 6.3 percent higher
+          relative odds of choosing a county as a destination for the same increase in permissiveness, while incumbent physicians are
+          more persistent in restrictive environments. In a counterfactual without measured net tightening since 2015, about 427
+          OB/GYN physician-equivalents would have been geographically reallocated across counties by 2024, with a modest shift toward
+          counties with lower baseline OB/GYN availability.
+        </p>
+      </article>
+
+      <article class="paper">
+        <div class="paper-title">Role of Information on Physicians’ Prescription Choice: Evidence from FDA Accelerated Approval</div>
+        <p>
+          This project studies how physicians adjust prescribing when the FDA Accelerated Approval program changes the
+          information available about a drug’s clinical value, with a focus on how information frictions shape treatment
+          choice in pharmaceutical markets.
+        </p>
+      </article>
+
+      <article class="paper">
+        <div class="paper-title">Energy Transition in the Context of the First Market-Based Cap-and-Trade Program in the U.S.</div>
+        <div class="coauthor">with Emily Pakhtigian</div>
+        <p>
+          This project examines how electric-generating plants adjust operation, generation, and fuel use in response to
+          carbon-pricing incentives under the Regional Greenhouse Gas Initiative.
+        </p>
+      </article>
+    </section>
+
+    <section id="teaching" class="panel">
+      <h2 class="section-title">Teaching</h2>
+      <div class="teaching-list">
+        <p><strong>Instructor of Record, The Pennsylvania State University</strong></p>
+        <p>ECON 306: Introduction to Econometrics</p>
+        <p>ECON 104: Introductory Macroeconomic Analysis</p>
+        <br>
+        <p><strong>Teaching Assistant, The Pennsylvania State University</strong></p>
+        <p>
+          ECON 501: Econometrics; ECON 445: Health Economics; ECON 423: Economics of Public Expenditure;
+          ECON 422: Applied Monetary Theory and Monetary History; ECON 304: Intermediate Macroeconomic Analysis;
+          ECON 104: Introductory Macroeconomic Analysis; ECON 102: Introductory Microeconomic Analysis.
+        </p>
+      </div>
+    </section>
+
+    <section id="cv" class="panel">
+      <h2 class="section-title">Curriculum Vitae</h2>
+      <p class="cv-note">View the CV directly in your browser or download the PDF.</p>
+      <div class="cv-actions">
+        <a class="cv-btn primary" href="Sheikh_Atiya_Islam_CV.pdf" target="_blank" rel="noopener">View CV</a>
+        <a class="cv-btn" href="Sheikh_Atiya_Islam_CV.pdf" download>Download PDF</a>
+      </div>
+      <iframe class="cv-frame" src="Sheikh_Atiya_Islam_CV.pdf" title="Sheikh Atiya Islam CV"></iframe>
+    </section>
+
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.panel');
+
+    function activateTab(tabName) {
+      buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tabName));
+      panels.forEach(panel => panel.classList.toggle('active', panel.id === tabName));
+      history.replaceState(null, '', tabName === 'home' ? '#home' : '#' + tabName);
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+    });
+
+    const initial = location.hash.replace('#','');
+    if (['home','research','teaching','cv'].includes(initial)) {
+      activateTab(initial);
+    }
+  </script>
+</body>
+</html>
